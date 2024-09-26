@@ -3,7 +3,7 @@ import { checkToken } from "@lib/checkToken";
 import { nanoid } from "nanoid";
 import { NextRequest, NextResponse } from "next/server";
 // import jwt from "jsonwebtoken";
-import { headers } from "next/headers";
+//import { headers } from "next/headers";
 
 export const GET = async (request: NextRequest) => {
   readDB();
@@ -66,10 +66,10 @@ export const DELETE = async (request: NextRequest) => {
   const { messageId } = body;
   // const message = (<Database>DB).messages.find((message) => message.messageId === messageId);
 
-  const headersData = headers();
-  if (!headersData) return null;
-  const rawAuthHeader = headersData.get("authorization");
-  if (!rawAuthHeader) return null;
+  //const headersData = headers();
+  //if (!headersData) return null;
+  //const rawAuthHeader = headersData.get("authorization");
+  //if (!rawAuthHeader) return null;
   //const token = rawAuthHeader.split(" ")[1];
 
   //const secret = process.env.JWT_SECRET || "This is another secret";
@@ -77,12 +77,12 @@ export const DELETE = async (request: NextRequest) => {
   //preparing "role" variable for reading role information from token
   //let role = null;
 
-  try {
+ // try {
     //const payload =  jwt.verify(token, secret);
     // role = (<Payload>payload).role;
-  } catch {
-    return null;
-  }
+  //} catch {
+    //return null;
+  //}
   
   if(payload === null || (<Payload>payload).role !== "SUPER_ADMIN"){
     return NextResponse.json(
