@@ -27,6 +27,12 @@ export interface Database {
   // readDB(): void;
 }
 
+export interface Payload{
+  id: string;
+  username: string;
+  role: "ADMIN" | "SUPER_ADMIN";
+}
+
 const originalDB = {
   rooms: [
     {

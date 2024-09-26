@@ -62,6 +62,6 @@ export const POST = async (request: NextRequest) => {
   return NextResponse.json({
     ok: true,
     //roomId,
-    message: `Room ${"replace this with room name"} has been created`,
+    message: `Room ${rooms} has been created`,
   });
 };
