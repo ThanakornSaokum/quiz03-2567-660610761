@@ -79,7 +79,7 @@ export const DELETE = async (request: NextRequest) => {
 
   try {
     const payload =  jwt.verify(token, secret);
-    role = (<Payload>payload).role;
+    // role = (<Payload>payload).role;
   } catch {
     return null;
   }
