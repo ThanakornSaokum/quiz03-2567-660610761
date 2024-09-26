@@ -75,10 +75,10 @@ export const DELETE = async (request: NextRequest) => {
   const secret = process.env.JWT_SECRET || "This is another secret";
 
   //preparing "role" variable for reading role information from token
-  let role = null;
+  //let role = null;
 
   try {
-    const payload =  jwt.verify(token, secret);
+    //const payload =  jwt.verify(token, secret);
     // role = (<Payload>payload).role;
   } catch {
     return null;
