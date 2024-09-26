@@ -2,7 +2,7 @@ import { DB, readDB, writeDB, Database, Payload } from "@lib/DB";
 import { checkToken } from "@lib/checkToken";
 import { nanoid } from "nanoid";
 import { NextRequest, NextResponse } from "next/server";
-import jwt from "jsonwebtoken";
+// import jwt from "jsonwebtoken";
 import { headers } from "next/headers";
 
 export const GET = async (request: NextRequest) => {
@@ -70,9 +70,9 @@ export const DELETE = async (request: NextRequest) => {
   if (!headersData) return null;
   const rawAuthHeader = headersData.get("authorization");
   if (!rawAuthHeader) return null;
-  const token = rawAuthHeader.split(" ")[1];
+  //const token = rawAuthHeader.split(" ")[1];
 
-  const secret = process.env.JWT_SECRET || "This is another secret";
+  //const secret = process.env.JWT_SECRET || "This is another secret";
 
   //preparing "role" variable for reading role information from token
   //let role = null;
